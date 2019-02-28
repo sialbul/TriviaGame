@@ -82,8 +82,8 @@ $(document).ready(function () {
     var i = 0;
     var currentQuestion;
     var populateQuestion = function () {
-        currentQuestion = questionList[i];
-        console.log(currentQuestion);
+        currentQuestion = questionList[i]; +
+            console.log(currentQuestion);
         $("#question").text(currentQuestion.question);
         $("#option1").text(currentQuestion.options[0]);
         $("#option2").text(currentQuestion.options[1]);
@@ -91,6 +91,7 @@ $(document).ready(function () {
         $("#option4").text(currentQuestion.options[3]);
         $("#questionImg").attr("src", currentQuestion.image);
         i++;
+        runTimer();
     };
 
     populateQuestion();
@@ -107,29 +108,12 @@ $(document).ready(function () {
     $(".option").on("click", function () {
 
         populateQuestion();
-        runTimer();
+
     });
-    //when the button clicked, checked the answer, if it is right, change background color green with check mark, 
-
-    //if it is wrong, change the background color red with cross sign
-    //show the right answer green
-    // show the answer 3 second
-    // add counter ++
-    // set the timer for each question 10 seconds
-    //if answer doesnt clicked in 10 second, move the next question
-    //show game over
-    //show how many right answers
-    //replay button
-
-
-
-    //  When the stop button gets clicked, run the stop function.
-
-
-    //  When the resume button gets clicked, execute the run function.
 
     function runTimer() {
         if (!running) {
+            timer = 5
             intervalId = setInterval(decrement, 1000);
             running = true;
         }
@@ -138,17 +122,17 @@ $(document).ready(function () {
     //  The decrement function.
     function decrement() {
 
-        $("#timeleft").html("<h3>Time remaining: " + timer + "</h3>");
+        $("#timeleft").html("<h3>Time remaining:   " + timer + "</h3>");
         timer--;
 
         //stop timer if reach 0
         if (timer === 0) {
             unanswerCount++;
             stop();
+            $("#answerblock").html("<h3>" + "Correct answer:   " + currentQuestion.answer + "</h3>");
+            //1000;
+            setTimeout(populateQuestion, 4000);
 
-            $("#answerblock").html("<h5>" + "Correct answer:" + currentQuestion.answer + "</h5>");
-            1000;
-            populateQuestion();
         }
     }
 
@@ -192,36 +176,42 @@ $(document).ready(function () {
             correctCount++;
             userGuess = "";
             $("#answerblok").html("<p>Correct!</p>");
+            setTimeout(4000);
 
         } else {
             stop();
             wrongCount++;
             userGuess = "";
             $("#answerblock").html("<p>Wrong! The correct answer is: " + currentQuestion.answer + "</p>");
+            setTimeout(4000);
         }
+
     })
 
 
-           //run the score screen if all questions answered
-        if ((wrongCount + correctCount + unanswerCount) === questionCount.length) {
-            $("#container4").show();
-            $("#container3").hide();
-            $("#result").html("<h3>Game Over!  Here's how you did: </h3>");
-            $("#result").append("<h4> Correct: " + correctCount + "</h4>");
-            $("#result").append("<h4> Incorrect: " + wrongCount + "</h4>");
-            $("#result").append("<h4> Unanswered: " + unanswerCount + "</h4>");
-            $("#restart").show();
-            correctCount = 0;
-            wrongCount = 0;
-            unanswerCount = 0;
+    //run the score screen if all questions answered
+    console.log("wrongCount = " + wrongCount + ", correctCount = " + correctCount);
 
-        } else {
-            runTimer();
-            populateQuestion();
 
-        }
-    
-    
+    if ((wrongCount + correctCount + unanswerCount) === questionCount.length) {
+        $("#container4").show();
+        $("#container3").hide();
+        $("#result").html("<h3>Game Over!  Here's how you did: </h3>");
+        $("#result").append("<h4> Correct: " + correctCount + "</h4>");
+        $("#result").append("<h4> Incorrect: " + wrongCount + "</h4>");
+        $("#result").append("<h4> Unanswered: " + unanswerCount + "</h4>");
+        $("#restart").show();
+        correctCount = 0;
+        wrongCount = 0;
+        unanswerCount = 0;
+
+    } else {
+        runTimer();
+        populateQuestion();
+
+    }
+
+
 
     $("#restart").on("click", function () {
         for (var i = 0; i < holder.length; i++) {
