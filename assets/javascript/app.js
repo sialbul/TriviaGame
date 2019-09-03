@@ -83,7 +83,7 @@ $(document).ready(function () {
     function runTimer() {
         if (!running) {
             timer=5;
-            clearInterval(intervalId);
+                        clearInterval(intervalId);
             intervalId = setInterval(decrement, 1000);
             // $("#timeleft").show();
             // $("#answerblock").hide();
@@ -96,11 +96,10 @@ $(document).ready(function () {
             if (timer == 0) {
                 // stop();
                 clearInterval(intervalId);
-                displayedCorrect(); 
-                populateQuestion();
             }
         }
     }
+    
     var i = 0;
     var currentQuestion;
 
@@ -119,6 +118,7 @@ $(document).ready(function () {
 
     function displayedCorrect() {
         $("#answerblock").html("<h3>" + "Correct answer:   " + currentQuestion.answer + "</h3>");
+
     }
 });
 // //  The stop function
