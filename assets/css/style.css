@@ -1,40 +1,57 @@
-body {              background-image: url(../images/world3.jpg);
-
+body {
+  background-image: url(../images/world3.jpg);
+}
+#container3{
+  padding: 0px 20px 20px 20px;
+  margin: 0 auto;
+  margin-top: 20px;
+  background-color: rgba(223, 219, 213, 0.822);
+  width: 1000px;
+  border: 5px ridge white;
+  position: relative;
+}
+#container2 {
+  margin: 0 auto;
+  margin-top: 20px;
+  background-color: rgba(223, 219, 213, 0.822);
+  width: 1000px;
+  height: 600px;
+  border: 5px ridge white;
+  position: relative;
+}
+h1 {
+  font: 400 130px/0.8 "Great Vibes", Helvetica, sans-serif;
+  color: red;
+  text-shadow: 4px 4px 3px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 
-#container {margin: 0 auto;
-            margin-top: 20px;
-            background-color: rgba(223, 219, 213, 0.822);
-            width: 1000px;
-            height: 600px;
-            border:5px ridge white;
-            position: relative;
-            
-}
-h1 {    font: 400 130px/0.8 'Great Vibes', Helvetica, sans-serif;
-    color: red;
-    text-shadow: 4px 4px 3px rgba(0,0,0,0.1); 
-    text-align: center;
+h4 {
+  font: 400 100px/1.3 "Berkshire Swash", Helvetica, sans-serif;
+  color: red;
+  text-shadow: 1px 1px 0px #ededed, 4px 4px 0px rgba(0, 0, 0, 0.15);
+  font-size: 64px;
+  text-align: center;
 }
 
-h4 { font: 400 100px/1.3 'Berkshire Swash', Helvetica, sans-serif;
-    color: red;
-    text-shadow: 1px 1px 0px #ededed, 4px 4px 0px rgba(0,0,0,0.15);
-    font-size: 64px;
-    text-align: center;}
+#start {
+  font: 400 100px/1.3 "Berkshire Swash", Helvetica, sans-serif;
+  color: red;
+  text-shadow: 1px 1px 0px #ededed, 4px 4px 0px rgba(0, 0, 0, 0.15);
+  font-size: 40px;
+  text-align: center;
+  position: absolute;
+  left: 420px;
+  bottom: 40px;
+  margin: 20px;
+  padding: 10px;
+  background-color: rgba(223, 219, 213, 0.596);
+}
 
-#start { font: 400 100px/1.3 'Berkshire Swash', Helvetica, sans-serif;
-    color: red;
-    text-shadow: 1px 1px 0px #ededed, 4px 4px 0px rgba(0,0,0,0.15);
-    font-size: 40px;
-    text-align: center;
-    position: absolute;
-    left: 420px;
-    bottom:40px;
-    margin: 20px;
-padding: 10px;
-background-color: rgba(223, 219, 213, 0.596);}
+#questionImg {
+  margin-top: 10px;
+  border: 5px ridge white;
+}
 
-#questionImg {margin-top: 10px;
-    border:5px ridge white;
-        }
+#question {
+}
