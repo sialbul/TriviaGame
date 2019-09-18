@@ -2,16 +2,17 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
-    <link href='http://fonts.googleapis.com/css?family=Great+Vibes' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Berkshire+Swash' rel='stylesheet' type='text/css'>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Trivia Game</title>
     <!-- CDNs for jQuery, Popper.js and Bootstrap JS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+    <link href='http://fonts.googleapis.com/css?family=Great+Vibes' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Berkshire+Swash' rel='stylesheet' type='text/css'>
+
 </head>
 
 <body>
@@ -20,53 +21,25 @@
         <h1>World Wonders</h1>
         <br>
         <h4>Trivia Game</h4>
-        <br>
         <button id="start">Start</button>
     </div>
-    <div id="container3">
-        <div class="card-group">
-            <div class="card">
+    <div id="container">
+        <div class="row">
+            <div class="col-md-9 col-lg-9">
+                <div id="game"></div>
+            </div>
+            <div class="col-md-3 col-lg-3">
                 <div class="row">
-                    <div class="col-md-10 col-lg-10">
-                        <div class="row">
-                            <img id="questionImg" src="" alt="Card image cap" width="90%" height="450px">
-                        </div>
-                        <div class="row">
-                            <div class="card-body">
-                                <div class="col-lg-12" style="text-align: center" ;>
-                                    <h3 id="question" class="card-title">Card title</h3>
-                                </div>
-                            </div>
-                            <p class="card-text">
-                                <div class="row">
-                                    <div class="col-md-6 col-lg-6">
-                                        <button id="option1" class="btn btn-primary number col-lg-6 option"></button>
-                                    </div>
-                                    <div class="col-md-6 col-lg-6">
-                                        <button id="option2" class="btn btn-primary number col-lg-6 option"></button>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="row">
-                                    <div class="col-md-6 col-lg-6">
-                                        <button id="option3" class="btn btn-primary number col-lg-6 option"></button>
-                                    </div>
-                                    <div class="col-md-6 col-lg-6">
-                                        <button id="option4" class="btn btn-primary number col-lg-6 option"></button>
-                                    </div>
-
-                                </div>
-                            </p>
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="col-md-2 col-lg-2">
-                        <div id="timeleft" style="text-align: center"></div>
-
-                        <div id="answerblock" style="text-align: center"></div>
-                        <h2 id="result"></h2>
-                        <button id="restart">Restart</button>
-                    </div>
+                    <div id="timeleft" style="text-align: center"></div>
+                </div>
+                <div class="row">
+                    <div id="resultSection"></div>
+                </div>
+                <div class="row">
+                    <div id="remaning"></div>
+                </div>
+                <div class="row">
+                    <button id="restart">Restart</button>
                 </div>
             </div>
         </div>
@@ -81,10 +54,8 @@
         integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
         crossorigin="anonymous"></script>
 
+    <script src="./assets/javascript/question.js"></script>
     <script src="./assets/javascript/app.js"></script>
-
-
-
 
 </body>
 
