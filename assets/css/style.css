@@ -8,14 +8,21 @@ body {
   background-color: rgba(223, 219, 213, 0.822);
   width: 1000px;
   height: 664px;
-  border: 5px solid black;
+  border: 5px ridge black;
   border-radius: 20px;
   position: relative;
+}
+
+#timeleft{
+  font-size: 28px;
+  color: red;
 }
 
 #game {
   margin: 0 auto;
   text-align: center;
+  font: 400 25px/0.8 "Great Vibes", Helvetica, sans-serif;
+
 }
 
 #game3 {
@@ -24,6 +31,8 @@ body {
   display: flex;
   justify-content: center;
   flex-direction: column;
+  font: 400 25px/0.8 "Great Vibes", Helvetica, sans-serif;
+
 }
 
 #choiceButton {
@@ -34,13 +43,15 @@ body {
 .rowInfo {
   height: 100px;
   width: 100%;
-  border: 1px solid black;
+  border: 2px ridge black;
   border-radius: 20px;
   padding: 0px;
   text-align: center;
   display: flex;
   justify-content: center;
   flex-direction: column;
+  font: 400 25px/0.8 "Great Vibes", Helvetica, sans-serif;
+
 }
 img {
   width: 100%;
@@ -52,6 +63,8 @@ img {
 #choiceButton {
   width: 100%;
   margin: 5px;
+  font: 400 25px/0.8 "Great Vibes", Helvetica, sans-serif;
+
 }
 #container2 {
   margin: 0 auto;

@@ -27,7 +27,7 @@ function timeUp() {
 }
 function countDown() {
     counter--;
-    $('#timeleft').html("Timer:" + counter);
+    $('#timeleft').html(counter);
     if (counter === 0) {
         //todo
         timeUp();
@@ -44,7 +44,7 @@ function loadQuestion() {
     const question = questionList[currentQuestion].question;
     const choices = questionList[currentQuestion].choices;
 
-    $('#timeleft').html("Timer:" + counter);
+    $('#timeleft').html(counter);
     $('#remaning').html(`${loadRemainingQuestion()}`);
     $('#game').html(`
     <img src="${image}"/>
@@ -121,7 +121,7 @@ $("#restart").click(function () {
 function loadRemainingQuestion() {
     const remainingQuestion = questionList.length - (currentQuestion + 1);
     const totalQuestion = questionList.length;
-    return `Remaining Question: ${remainingQuestion}/${totalQuestion}`;
+    return ` ${remainingQuestion}/${totalQuestion} <br> Remaining Question`;
 
 }
 
@@ -129,9 +129,9 @@ function resultOfQuestion(status) {
     const answer = questionList[currentQuestion].answer;
 
     if (status === 'win') {
-        $('#resultSection').html(`<p><b>Congrulations</b>, you pick the correct answer</p>`);
+        $('#resultSection').html(`<p><b>Congrulations!</b><br> You pick the correct answer</p>`);
     } else {
-        $('#resultSection').html(`<p>Oppps! Correct answer was <b>${answer}</b></p>`);
+        $('#resultSection').html(`<p>Oppps!<br> Correct answer was <br><b>${answer}</b></p>`);
     }
 }
 
