@@ -1,4 +1,4 @@
-let counter = 5;
+let counter = 10;
 let currentQuestion = 0;
 let score = 0;
 let lost = 0;
@@ -38,7 +38,7 @@ function countDown() {
 
 function loadQuestion() {
 
-    counter = 5;
+    counter = 10;
     timer = setInterval(countDown, 1000);
     const image = questionList[currentQuestion].image;
     const question = questionList[currentQuestion].question;
@@ -49,7 +49,9 @@ function loadQuestion() {
     $('#game').html(`
     <img src="${image}"/>
     <h3>${question}</h3>
-    ${loadChoices(choices)}
+    `);
+    $('#game2').html(`
+        ${loadChoices(choices)}
     `);
     $('#resultSection').html(`<p></p>`);
 
@@ -59,18 +61,18 @@ function loadQuestion() {
 function loadChoices(choices) {
     let result = '';
     for (let i = 0; i < choices.length; i++) {
-        result += `<p class="choice" data-answer="${choices[i]}">${choices[i]}</p>`;
+        result += `<button type="button" id="choiceButton" class="btn btn-default" data-answer="${choices[i]}">${choices[i]}</button>`;
     }
     return result;
 }
 
 
 //event delegation 
-$(document).on('click', ".choice", function () {
+$(document).on('click', "#choiceButton", function () {
     clearInterval(timer);
     var selectedAnswer = $(this).attr("data-answer");
     var answer = questionList[currentQuestion].answer;
-    console.log('choice', selectedAnswer);
+    console.log('choiceButton', selectedAnswer);
 
     if (selectedAnswer === answer) {
         score++;
@@ -91,27 +93,20 @@ function displayResult() {
 <p> You get ${score} questions(s) right </p>
 <p> You missed ${lost} questions(s) </p>
 <p> Total questions ${questionList.length}</p>
-<button class="restart2">Restart</button>
 `;
-    $('#game').html(result);
+    $('#game3').html(result);
     $('#timeleft').hide();
-    $('#restart').hide();
+    $('#restart').show();
+    $('#remaning').hide();
+    $('#resultSection').hide();
+    $('#game2').hide();
+    $('#game').hide();
+
 }
-
-$(document).on('click', '.restart2', function () {
-    clearInterval(timer);
-    counter = 5;
-    currentQuestion = 0;
-    score = 0;
-    lost = 0;
-    timer = null;
-    loadQuestion();
-
-})
 
 $(document).on('click', '#restart', function () {
     clearInterval(timer);
-    counter = 5;
+    counter = 10;
     currentQuestion = 0;
     score = 0;
     lost = 0;
@@ -119,16 +114,13 @@ $(document).on('click', '#restart', function () {
     loadQuestion();
 });
 
-
-
 $("#restart").click(function () {
-    return confirm("Are you sure you want to restart the game?")
+    return confirm("Do you want to restart the game?")
 });
 
 function loadRemainingQuestion() {
     const remainingQuestion = questionList.length - (currentQuestion + 1);
     const totalQuestion = questionList.length;
-
     return `Remaining Question: ${remainingQuestion}/${totalQuestion}`;
 
 }
@@ -138,24 +130,14 @@ function resultOfQuestion(status) {
 
     if (status === 'win') {
         $('#resultSection').html(`<p><b>Congrulations</b>, you pick the correct answer</p>`);
-        // $(answer).css("background-color", "#ff0000");
-
-
     } else {
         $('#resultSection').html(`<p>Oppps! Correct answer was <b>${answer}</b></p>`);
-
-        // $(answer).css("background-color", "#ff0000");
-
     }
 }
-
-
 
 $('#start').click(function () {
     $('#container2').remove();
     $('#container').show();
-
-
     loadQuestion();
 
 })
