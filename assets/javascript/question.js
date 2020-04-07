@@ -28,7 +28,7 @@ const questionList = [
     {
         question: "How many visitors are allowed to visit Potala Palace per day?",
         choices: [ 10, 120, 1500,2300],
-        answer: 2300,
+        answer: "2300",
         image: "assets/images/potalaPAlace.jpg",
 
     },

@@ -24,8 +24,6 @@ function timeUp() {
     resultOfQuestion('lost');
     // $("#choiceButton").off('click');
     setTimeout(nextQuestion, 3 * 1000);
-    $("button").attr('disabled', true)
-
 }
 
 function countDown() {
@@ -76,26 +74,20 @@ $(document).on('click', "#choiceButton", function () {
     var answer = questionList[currentQuestion].answer;
     console.log('choiceButton', selectedAnswer);
     $(this).css('background-color', 'green');
-  
-
     if (selectedAnswer === answer) {
         score++;
         resultOfQuestion('win');
         setTimeout(nextQuestion, 3 * 1000);
         console.log("wins");
         $(this).css('background-color', 'green');
-        $("button").attr('disabled', true)
     } else {
         lost++;
         resultOfQuestion('lost');
         setTimeout(nextQuestion, 3 * 1000);
         console.log("lost");
         $(this).css('background-color', 'red');
-        $("button").attr('disabled', true)
-
-        
     }
-}).attr('disabled', true);
+}); 
 
 
 function displayResult() {
