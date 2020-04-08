@@ -51,6 +51,7 @@ function loadQuestion() {
     $('#remaning').html(`<h3>${loadRemainingQuestion()}</h3>`);
     $('#game').html(`
     <img src="${image}"/>
+    <div id="timeleft"></div>
     <h3>${question}</h3>
     `);
     $('#game2').html(`
@@ -67,7 +68,6 @@ function loadChoices(choices) {
     }
     return result;
 }
-
 
 //event delegation 
 $(document).on('click', "#choiceButton", function () {
@@ -92,8 +92,6 @@ $(document).on('click', "#choiceButton", function () {
         console.log("lost");
         $(this).css('background-color', 'red');
         $("button").attr('disabled', true)
-
-        
     }
 }).attr('disabled', true);
 
@@ -132,8 +130,6 @@ function loadRemainingQuestion() {
     const remainingQuestion = questionList.length - (currentQuestion + 1);
     const totalQuestion = questionList.length;
     return ` ${remainingQuestion}/${totalQuestion} <br> Remaining Question`;
-
-
 }
 
 function resultOfQuestion(status) {
