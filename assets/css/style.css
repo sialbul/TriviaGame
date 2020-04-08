@@ -6,8 +6,8 @@ body {
   margin: 0 auto;
   margin-top: 20px;
   background-color: rgba(223, 219, 213, 0.822);
-  width: 1000px;
-  height: 664px;
+  /* width: 1000px;
+  height: 664px; */
   border: 5px ridge black;
   border-radius: 20px;
   position: relative;
@@ -23,6 +23,9 @@ body {
   text-align: center;
   font: 400 25px/0.8 "Berkshire Swash", Helvetica, sans-serif;
 
+}
+.result{
+  margin-top: 20%;
 }
 
 #game3 {
@@ -53,8 +56,8 @@ body {
 
 }
 img {
-  width: 80%;
-  height: 400px;
+  width: 50%;
+  height: 50%;
   border: 3px solid black;
   border-radius: 20px;
 }
@@ -74,6 +77,10 @@ img {
   border: 5px ridge white;
   border-radius: 20px;
   position: relative;
+  overflow: hidden;
+  padding-top: 20vh;
+  align-items: center;
+
 }
 h1 {
   font: 400 130px/0.8 "Great Vibes", Helvetica, sans-serif;
@@ -113,17 +120,28 @@ h4 {
   color: red;
 
 }
-#questionImg {
-  margin-top: 10px;
-  border: 5px ridge white;
-}
+
 #choiceButton{
   width: 48%;
   float: left;
 }
 
 
-
 #choiceButton:disabled {
 cursor: pointer;
+}
+
+li {
+float: right;
+margin: 25px;
+list-style-type: none;
+}
+
+ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  text-align: center;
+  align-items: center;
+  min-height: 10vh;
+
 }
