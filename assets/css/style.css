@@ -6,36 +6,52 @@ body {
   margin: 0 auto;
   margin-top: 20px;
   background-color: rgba(223, 219, 213, 0.822);
-  /* width: 1000px;
-  height: 664px; */
+  width: 900px;
+  height: 664px;
   border: 5px ridge black;
   border-radius: 20px;
   position: relative;
+
 }
 
-#timeleft{
+#timeleft {
   font-size: 36px;
   color: red;
-}
-
-#game {
-  margin: 0 auto;
-  text-align: center;
   font: 400 25px/0.8 "Berkshire Swash", Helvetica, sans-serif;
 
 }
-.result{
+#remaning{
+  font: 400 25px/0.8 "Berkshire Swash", Helvetica, sans-serif;
+
+}
+#resultSection{
+  font: 400 25px/0.8 "Berkshire Swash", Helvetica, sans-serif;
+
+}
+
+#restart{
+  font: 400 25px/0.8 "Berkshire Swash", Helvetica, sans-serif;
+
+}
+
+#game {
+  text-align: center;
+  align-items: center;
+  font: 400 25px/0.8 "Berkshire Swash", Helvetica, sans-serif;
+}
+
+.result {
   margin-top: 20%;
 }
 
 #game3 {
   margin: 0 auto;
   text-align: center;
+  align-items: center;
   display: flex;
   justify-content: center;
   flex-direction: column;
   font: 400 25px/0.8 "Berkshire Swash", Helvetica, sans-serif;
-
 }
 
 #choiceButton {
@@ -53,20 +69,22 @@ body {
   justify-content: center;
   flex-direction: column;
   font: 400 25px/0.8 "Berkshire Swash", Helvetica, sans-serif;
-
 }
 img {
-  width: 50%;
-  height: 50%;
+  height: 45vh;
+  width: 80%;
   border: 3px solid black;
   border-radius: 20px;
+  object-fit: fill;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #choiceButton {
   width: 100%;
   margin: 5px;
-  font: 400 25px/0.8 "Berkshire Swash", Helvetica, sans-serif;;
-
+  font: 400 25px/0.8 "Berkshire Swash", Helvetica, sans-serif;
 }
 #container2 {
   margin: 0 auto;
@@ -80,7 +98,6 @@ img {
   overflow: hidden;
   padding-top: 20vh;
   align-items: center;
-
 }
 h1 {
   font: 400 130px/0.8 "Great Vibes", Helvetica, sans-serif;
@@ -118,27 +135,24 @@ h4 {
   border-radius: 20px;
   padding: 10px;
   color: red;
-
 }
 
-#choiceButton{
+#choiceButton {
   width: 48%;
   float: left;
 }
 
-
 #choiceButton:disabled {
-cursor: pointer;
+  cursor: pointer;
 }
 
 li {
-float: right;
-margin: 25px;
-list-style-type: none;
-color: red;
-font-size: 25px;
-font: 400 40px/0.8"Great Vibes", Helvetica, sans-serif;
-
+  float: right;
+  margin: 25px;
+  list-style-type: none;
+  color: red;
+  font-size: 25px;
+  font: 400 40px/0.8 "Great Vibes", Helvetica, sans-serif;
 }
 
 ul {
@@ -150,8 +164,8 @@ ul {
   margin-top: 20px;
 }
 
-.gameOptions{
-border: 2px solid red;
-border-radius: 90px;
-padding: 20px;
+.gameOptions {
+  border: 2px solid red;
+  border-radius: 90px;
+  padding: 20px;
 }

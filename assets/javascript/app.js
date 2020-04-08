@@ -48,7 +48,7 @@ function loadQuestion() {
     const choices = questionList[currentQuestion].choices;
 
     $('#timeleft').html(counter);
-    $('#remaning').html(`${loadRemainingQuestion()}`);
+    $('#remaning').html(`<h3>${loadRemainingQuestion()}</h3>`);
     $('#game').html(`
     <img src="${image}"/>
     <h3>${question}</h3>
@@ -139,10 +139,10 @@ function loadRemainingQuestion() {
 function resultOfQuestion(status) {
     const answer = questionList[currentQuestion].answer;
     if (status === 'win') {
-        $('#resultSection').html(`<p><b>Congrulations!</b><br> You pick the correct answer</p>`);
+        $('#resultSection').html(`<h3><b>Congrulations!</b><br> You pick the correct answer</h3>`);
         // questionList[currentQuestion].style.color = 'lightgreen';
     } else {
-        $('#resultSection').html(`<p>Oppps!<br> Correct answer was <br><b>${answer}</b></p>`);
+        $('#resultSection').html(`<h3>Oppps!<br> Correct answer was <br><b>${answer}</b></h3>`);
         // questionList[currentQuestion].style.color = 'red';
 
     }
