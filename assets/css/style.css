@@ -1,188 +1,190 @@
 body {
-  background-image: url(../images/world3.jpg);
+    background-image: url(../images/world3.jpg);
 }
-#container {
-  padding: 20px 20px 20px 20px;
-  margin: 0 auto;
-  margin-top: 20px;
-  background-color: rgba(223, 219, 213, 0.822);
-  width: 900px;
-  height: 664px;
-  border: 5px ridge black;
-  border-radius: 20px;
-  position: relative;
 
+#container {
+    padding: 20px 20px 20px 20px;
+    margin: 0 auto;
+    margin-top: 20px;
+    background-color: rgba(223, 219, 213, 0.822);
+    width: 900px;
+    height: 664px;
+    border: 5px ridge black;
+    border-radius: 20px;
+    position: relative;
 }
 
 #timeleft {
-  font-size: 36px;
-  color: red;
-  font: 400 25px/0.8 "Berkshire Swash", Helvetica, sans-serif;
-position: absolute;
-top:0px;
-right:15px;
-border: 2px solid black;
-border-radius:360px;
-padding:10px;
-background-color: white;
-}
-#remaning{
-  font: 400 25px/0.8 "Berkshire Swash", Helvetica, sans-serif;
-
-}
-#resultSection{
-  font: 400 25px/0.8 "Berkshire Swash", Helvetica, sans-serif;
-
+    font-size: 36px;
+    color: red;
+    font: 400 25px/0.8 "Berkshire Swash", Helvetica, sans-serif;
+    position: absolute;
+    top: 0px;
+    right: 15px;
+    border: 2px solid black;
+    border-radius: 360px;
+    padding: 10px;
+    background-color: white;
 }
 
-#restart{
-  font: 400 25px/0.8 "Berkshire Swash", Helvetica, sans-serif;
-
+#remaning {
+    font: 400 25px/0.8 "Berkshire Swash", Helvetica, sans-serif;
 }
 
-#game {
-  text-align: center;
-  align-items: center;
-  font: 400 25px/0.8 "Berkshire Swash", Helvetica, sans-serif;
-}
-
-.result {
-  margin-top: 20%;
-}
-
-#game3 {
-  margin: 0 auto;
-  text-align: center;
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  font: 400 25px/0.8 "Berkshire Swash", Helvetica, sans-serif;
-}
-
-#choiceButton {
-  float: left;
-  width: 10px;
-  border-radius: 20px;
-}
-.rowInfo {
-  height: 100px;
-  width: 100%;
-  border-radius: 20px;
-  padding: 0px;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  font: 400 25px/0.8 "Berkshire Swash", Helvetica, sans-serif;
-}
-
-img {
-  height: 45vh;
-  width: 80%;
-  border: 3px solid black;
-  border-radius: 20px;
-  object-fit: fill;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  position: relative;
-}
-
-#choiceButton {
-  width: 100%;
-  margin: 5px;
-  font: 400 25px/0.8 "Berkshire Swash", Helvetica, sans-serif;
-}
-#container2 {
-  margin: 0 auto;
-  margin-top: 20px;
-  background-color: rgba(223, 219, 213, 0.822);
-  width: 1000px;
-  height: 664px;
-  border: 5px ridge white;
-  border-radius: 20px;
-  position: relative;
-  overflow: hidden;
-  padding-top: 20vh;
-  align-items: center;
-}
-h1 {
-  font: 400 130px/0.8 "Great Vibes", Helvetica, sans-serif;
-  color: red;
-  text-shadow: 4px 4px 3px rgba(0, 0, 0, 0.1);
-  text-align: center;
-}
-
-h4 {
-  font: 400 100px/1.3 "Berkshire Swash", Helvetica, sans-serif;
-  color: red;
-  text-shadow: 1px 1px 0px #ededed, 4px 4px 0px rgba(0, 0, 0, 0.15);
-  font-size: 64px;
-  text-align: center;
-}
-
-#start {
-  font: 400 100px/1.3 "Berkshire Swash", Helvetica, sans-serif;
-  color: red;
-  text-shadow: 1px 1px 0px #ededed, 4px 4px 0px rgba(0, 0, 0, 0.15);
-  font-size: 40px;
-  text-align: center;
-  position: absolute;
-  left: 420px;
-  bottom: 40px;
-  margin: 20px;
-  padding: 10px;
-  background-color: rgba(223, 219, 213, 0.596);
-  border-radius: 20px;
+#resultSection {
+    font: 400 25px/0.8 "Berkshire Swash", Helvetica, sans-serif;
 }
 
 #restart {
-  width: 150px;
-  margin: 0 auto;
-  border-radius: 20px;
-  padding: 10px;
-  color: red;
+    font: 400 25px/0.8 "Berkshire Swash", Helvetica, sans-serif;
+}
+
+#game {
+    text-align: center;
+    align-items: center;
+    font: 400 25px/0.8 "Berkshire Swash", Helvetica, sans-serif;
+}
+
+.result {
+    margin-top: 20%;
+}
+
+#game3 {
+    margin: 0 auto;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    font: 400 25px/0.8 "Berkshire Swash", Helvetica, sans-serif;
 }
 
 #choiceButton {
-  width: 48%;
-  float: left;
+    float: left;
+    width: 10px;
+    border-radius: 20px;
+}
+
+.rowInfo {
+    height: 100px;
+    width: 100%;
+    border-radius: 20px;
+    padding: 0px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    font: 400 25px/0.8 "Berkshire Swash", Helvetica, sans-serif;
+}
+
+img {
+    height: 45vh;
+    width: 80%;
+    border: 3px solid black;
+    border-radius: 20px;
+    object-fit: fill;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+
+#choiceButton {
+    width: 100%;
+    margin: 5px;
+    font: 400 25px/0.8 "Berkshire Swash", Helvetica, sans-serif;
+}
+
+#container2 {
+    margin: 0 auto;
+    margin-top: 20px;
+    background-color: rgba(223, 219, 213, 0.822);
+    width: 1000px;
+    height: 664px;
+    border: 5px ridge white;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    padding-top: 20vh;
+    align-items: center;
+}
+
+h1 {
+    font: 400 130px/0.8 "Great Vibes", Helvetica, sans-serif;
+    color: red;
+    text-shadow: 4px 4px 3px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+h4 {
+    font: 400 100px/1.3 "Berkshire Swash", Helvetica, sans-serif;
+    color: red;
+    text-shadow: 1px 1px 0px #ededed, 4px 4px 0px rgba(0, 0, 0, 0.15);
+    font-size: 64px;
+    text-align: center;
+}
+
+#start {
+    font: 400 100px/1.3 "Berkshire Swash", Helvetica, sans-serif;
+    color: red;
+    text-shadow: 1px 1px 0px #ededed, 4px 4px 0px rgba(0, 0, 0, 0.15);
+    font-size: 40px;
+    text-align: center;
+    position: absolute;
+    left: 420px;
+    bottom: 40px;
+    margin: 20px;
+    padding: 10px;
+    background-color: rgba(223, 219, 213, 0.596);
+    border-radius: 20px;
+}
+
+#restart {
+    width: 150px;
+    margin: 0 auto;
+    border-radius: 20px;
+    padding: 10px;
+    color: red;
+}
+
+#choiceButton {
+    width: 48%;
+    float: left;
 }
 
 #choiceButton:disabled {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 li {
-  float: right;
-  margin: 25px;
-  list-style-type: none;
-  color: red;
-  font-size: 25px;
-  font: 400 40px/0.8 "Great Vibes", Helvetica, sans-serif;
+    float: right;
+    margin: 25px;
+    list-style-type: none;
+    color: red;
+    font-size: 25px;
+    font: 400 40px/0.8 "Great Vibes", Helvetica, sans-serif;
 }
 
 ul {
-  display: grid;
-  grid-template-columns: 1fr 2fr 1fr 1fr;
-  text-align: center;
-  align-items: center;
-  min-height: 10vh;
-  margin-top: 20px;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr 1fr;
+    text-align: center;
+    align-items: center;
+    min-height: 10vh;
+    margin-top: 20px;
 }
 
-#resultPart{
-   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  text-align: center;
-  align-items: center;
-  min-height: 10vh;
-  margin-top: 20px;
+#resultPart {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    text-align: center;
+    align-items: center;
+    min-height: 10vh;
+    margin-top: 20px;
 }
 
 .gameOptions {
-  border: 2px solid red;
-  border-radius: 90px;
-  padding: 20px;
+    border: 2px solid red;
+    border-radius: 90px;
+    padding: 20px;
 }

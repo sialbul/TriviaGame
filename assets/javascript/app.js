@@ -70,13 +70,13 @@ function loadChoices(choices) {
 }
 
 //event delegation 
-$(document).on('click', "#choiceButton", function () {
+$(document).on('click', "#choiceButton", function() {
     clearInterval(timer);
     var selectedAnswer = $(this).attr("data-answer");
     var answer = questionList[currentQuestion].answer;
     console.log('choiceButton', selectedAnswer);
     $(this).css('background-color', 'green');
-  
+
 
     if (selectedAnswer === answer) {
         score++;
@@ -112,7 +112,7 @@ function displayResult() {
 
 }
 
-$(document).on('click', '#restart', function () {
+$(document).on('click', '#restart', function() {
     clearInterval(timer);
     counter = 10;
     currentQuestion = 0;
@@ -122,7 +122,7 @@ $(document).on('click', '#restart', function () {
     loadQuestion();
 });
 
-$("#restart").click(function () {
+$("#restart").click(function() {
     return `$("#myModal").modal()`;
 });
 
@@ -144,14 +144,14 @@ function resultOfQuestion(status) {
     }
 }
 
-$('#start').click(function () {
+$('#start').click(function() {
     $('#container2').remove();
     $('#container').show();
     loadQuestion();
 
 })
 
-$(document).ready(function () {
+$(document).ready(function() {
     $('#container2').show();
     $('#container').hide();
 });
