@@ -4,7 +4,7 @@ let score = 0;
 let lost = 0;
 let timer;
 
-
+let initialOffset = 440;
 
 function nextQuestion() {
     const isQuestionOver = questionList.length - 1 === currentQuestion;
@@ -19,6 +19,7 @@ function nextQuestion() {
 }
 
 function timeUp() {
+    console.log(timer);
     clearInterval(timer);
     lost++;
     resultOfQuestion('lost');
@@ -28,30 +29,33 @@ function timeUp() {
 
 }
 
-function countDown() {
-    counter--;
-    $('#timeleft').html(counter);
-    if (counter === 0) {
-        //todo
-        timeUp();
-    }
+/* Need initial run as interval hasn't yet occured... */
+$('.circle_animation').css('stroke-dashoffset', initialOffset - ((initialOffset / counter)));
 
-}
 //Display the image, the question and the choices to the browser
 
 function loadQuestion() {
 
-    counter = 10;
-    timer = setInterval(countDown, 1000);
+    counter = 11;
+    timer = setInterval(function() {
+            counter--;
+            if (counter === 0) {
+                clearInterval(timer);
+                timeUp();
+            }
+            $('h2').text(counter);
+            $('.circle_animation').css('stroke-dashoffset', initialOffset - ((initialOffset / counter)));
+        },
+        1000);
+
+
     const image = questionList[currentQuestion].image;
     const question = questionList[currentQuestion].question;
     const choices = questionList[currentQuestion].choices;
 
-    $('#timeleft').html(counter);
     $('#remaning').html(`<h3>${loadRemainingQuestion()}</h3>`);
     $('#game').html(`
     <img src="${image}"/>
-    <div id="timeleft"></div>
     <h3>${question}</h3>
     `);
     $('#game2').html(`
