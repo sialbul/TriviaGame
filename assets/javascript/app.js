@@ -2,13 +2,11 @@ let counter = 10;
 let currentQuestion = 0;
 let score = 0;
 let lost = 0;
-let timer;
 
 let initialOffset = 440;
 
 function nextQuestion() {
     const isQuestionOver = questionList.length - 1 === currentQuestion;
-
     if (isQuestionOver) {
         console.log("Game is over");
         displayResult();
@@ -19,8 +17,8 @@ function nextQuestion() {
 }
 
 function timeUp() {
-    console.log(timer);
-    clearInterval(timer);
+    clearInterval(timerInterval);
+    console.log(timeLeft);
     lost++;
     resultOfQuestion('lost');
     // $("#choiceButton").off('click');
@@ -29,30 +27,15 @@ function timeUp() {
 
 }
 
-/* Need initial run as interval hasn't yet occured... */
-$('.circle_animation').css('stroke-dashoffset', initialOffset - ((initialOffset / counter)));
-
-//Display the image, the question and the choices to the browser
-
 function loadQuestion() {
-
-    counter = 11;
-    timer = setInterval(function() {
-            counter--;
-            if (counter === 0) {
-                clearInterval(timer);
-                timeUp();
-            }
-            $('h2').text(counter);
-            $('.circle_animation').css('stroke-dashoffset', initialOffset - ((initialOffset / counter)));
-        },
-        1000);
-
+    clearInterval(timerInterval);
+    startTimer();
+    console.log(timeLeft);
+    console.log(TIME_LIMIT);
 
     const image = questionList[currentQuestion].image;
     const question = questionList[currentQuestion].question;
     const choices = questionList[currentQuestion].choices;
-
     $('#remaning').html(`<h3>${loadRemainingQuestion()}</h3>`);
     $('#game').html(`
     <img src="${image}"/>
@@ -75,7 +58,7 @@ function loadChoices(choices) {
 
 //event delegation 
 $(document).on('click', "#choiceButton", function() {
-    clearInterval(timer);
+    clearInterval(timerInterval);
     var selectedAnswer = $(this).attr("data-answer");
     var answer = questionList[currentQuestion].answer;
     console.log('choiceButton', selectedAnswer);
@@ -88,14 +71,16 @@ $(document).on('click', "#choiceButton", function() {
         setTimeout(nextQuestion, 3 * 1000);
         console.log("wins");
         $(this).css('background-color', 'green');
-        $("button").attr('disabled', true)
+        $("button").attr('disabled', true);
+
     } else {
         lost++;
         resultOfQuestion('lost');
         setTimeout(nextQuestion, 3 * 1000);
         console.log("lost");
         $(this).css('background-color', 'red');
-        $("button").attr('disabled', true)
+        $("button").attr('disabled', true);
+
     }
 }).attr('disabled', true);
 
@@ -113,16 +98,15 @@ function displayResult() {
     $('#resultSection').hide();
     $('#game2').hide();
     $('#game').hide();
+    $('#circleTimer').hide();
 
 }
 
 $(document).on('click', '#restart', function() {
-    clearInterval(timer);
-    counter = 10;
+    clearInterval(timerInterval);
     currentQuestion = 0;
     score = 0;
     lost = 0;
-    timer = null;
     loadQuestion();
 });
 
