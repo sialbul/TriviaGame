@@ -8,8 +8,8 @@ gsap.timeline()
 
 
 const FULL_DASH_ARRAY = 283;
-const WARNING_THRESHOLD = 5;
-const ALERT_THRESHOLD = 3;
+const WARNING_THRESHOLD = 8;
+const ALERT_THRESHOLD = 4;
 
 const COLOR_CODES = {
     info: {
@@ -25,7 +25,7 @@ const COLOR_CODES = {
     }
 };
 
-var TIME_LIMIT = 10;
+var TIME_LIMIT = 15;
 let timePassed = 0;
 let timeLeft = TIME_LIMIT;
 let timerInterval = null;
@@ -59,10 +59,8 @@ document.getElementById("circleTimer").innerHTML = `
 
 
 function startTimer() {
-    var TIME_LIMIT = 10;
+    var TIME_LIMIT = 15;
     let timePassed = 0;
-    // let timeLeft = TIME_LIMIT;
-
 
     timerInterval = setInterval(() => {
         timePassed = timePassed += 1;
@@ -75,7 +73,6 @@ function startTimer() {
         if (timeLeft === 0) {
             clearInterval(timerInterval);
             timeUp();
-
         }
     }, 1000);
 }
