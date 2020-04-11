@@ -87,6 +87,8 @@ $(document).on('click', "#choiceButton", function() {
 
 function displayResult() {
     const result = `
+  
+
 <p> You get ${score} questions(s) right </p>
 <p> You missed ${lost} questions(s) </p>
 <p> Total questions ${questionList.length}</p>
@@ -99,6 +101,7 @@ function displayResult() {
     $('#game2').hide();
     $('#game').hide();
     $('#circleTimer').hide();
+    $('#resultPart').hide();
 
 }
 

@@ -56,12 +56,18 @@ body {
 
 #game3 {
     margin: 0 auto;
+    height: 250px;
     text-align: center;
     align-items: center;
     display: flex;
     justify-content: center;
     flex-direction: column;
     font: 400 25px/0.8 "Berkshire Swash", Helvetica, sans-serif;
+}
+
+.embed {
+    width: 100px;
+    height: 80px;
 }
 
 #choiceButton {
