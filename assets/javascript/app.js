@@ -89,10 +89,11 @@ function displayResult() {
 <p> You get ${score} questions(s) right </p>
 <p> You missed ${lost} questions(s) </p>
 <p> Total questions ${questionList.length}</p>
+
 `;
     $('#game3').html(result);
     $('#timeleft').hide();
-    $('#reStart').show();
+    $('#reStart').attr('disabled', false);
     $('#remaning').hide();
     $('#resultSection').hide();
     $('#game2').hide();
@@ -103,7 +104,8 @@ function displayResult() {
 }
 
 $("#reStart").click(function() {
-    confirm("Do you want to cancel? "); {
+    var restart = confirm("Do you want to cancel? ");
+    if (restart) {
         clearInterval(timerInterval);
         currentQuestion = 0;
         score = 0;
