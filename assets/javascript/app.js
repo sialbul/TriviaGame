@@ -9,7 +9,9 @@ function nextQuestion() {
     const isQuestionOver = questionList.length - 1 === currentQuestion;
     if (isQuestionOver) {
         console.log("Game is over");
-        displayResult();
+        displayResult(
+
+        );
     } else {
         currentQuestion++;
         loadQuestion();
@@ -87,7 +89,6 @@ $(document).on('click', "#choiceButton", function() {
 
 function displayResult() {
     const result = `
-  
 
 <p> You get ${score} questions(s) right </p>
 <p> You missed ${lost} questions(s) </p>
@@ -105,7 +106,7 @@ function displayResult() {
 
 }
 
-$(document).on('click', '#restart', function() {
+$(document).on('click', '#reStart', function() {
     clearInterval(timerInterval);
     currentQuestion = 0;
     score = 0;
@@ -113,8 +114,10 @@ $(document).on('click', '#restart', function() {
     loadQuestion();
 });
 
-$("#restart").click(function() {
-    return `$("#myModal").modal()`;
+$("#reStart").on('click', function() {
+    alert(
+        "Do you want to cancel? "
+    )
 });
 
 function loadRemainingQuestion() {
