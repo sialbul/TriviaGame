@@ -9,9 +9,7 @@ function nextQuestion() {
     const isQuestionOver = questionList.length - 1 === currentQuestion;
     if (isQuestionOver) {
         console.log("Game is over");
-        displayResult(
-
-        );
+        displayResult();
     } else {
         currentQuestion++;
         loadQuestion();
@@ -26,7 +24,6 @@ function timeUp() {
     // $("#choiceButton").off('click');
     setTimeout(nextQuestion, 3 * 1000);
     $("button").attr('disabled', true)
-
 }
 
 function loadQuestion() {
@@ -48,6 +45,7 @@ function loadQuestion() {
     `);
 
     $('#resultSection').html(`<p></p>`);
+    $('#reStart').attr('disabled', false);
 }
 
 function loadChoices(choices) {
@@ -65,8 +63,6 @@ $(document).on('click', "#choiceButton", function() {
     var answer = questionList[currentQuestion].answer;
     console.log('choiceButton', selectedAnswer);
     $(this).css('background-color', 'green');
-
-
     if (selectedAnswer === answer) {
         score++;
         resultOfQuestion('win');
@@ -84,19 +80,19 @@ $(document).on('click', "#choiceButton", function() {
         $("button").attr('disabled', true);
 
     }
+
 }).attr('disabled', true);
 
 
 function displayResult() {
     const result = `
-
 <p> You get ${score} questions(s) right </p>
 <p> You missed ${lost} questions(s) </p>
 <p> Total questions ${questionList.length}</p>
 `;
     $('#game3').html(result);
     $('#timeleft').hide();
-    $('#restart').show();
+    $('#reStart').show();
     $('#remaning').hide();
     $('#resultSection').hide();
     $('#game2').hide();
@@ -106,19 +102,17 @@ function displayResult() {
 
 }
 
-$(document).on('click', '#reStart', function() {
-    clearInterval(timerInterval);
-    currentQuestion = 0;
-    score = 0;
-    lost = 0;
-    loadQuestion();
+$("#reStart").click(function() {
+    confirm("Do you want to cancel? "); {
+        clearInterval(timerInterval);
+        currentQuestion = 0;
+        score = 0;
+        lost = 0;
+        loadQuestion()
+    }
 });
 
-$("#reStart").on('click', function() {
-    alert(
-        "Do you want to cancel? "
-    )
-});
+
 
 function loadRemainingQuestion() {
     const remainingQuestion = questionList.length - (currentQuestion + 1);

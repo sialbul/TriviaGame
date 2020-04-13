@@ -40,10 +40,6 @@ body {
     font: 400 25px/0.8 "Berkshire Swash", Helvetica, sans-serif;
 }
 
-#restart {
-    font: 400 25px/0.8 "Berkshire Swash", Helvetica, sans-serif;
-}
-
 #game {
     text-align: center;
     align-items: center;
@@ -150,12 +146,13 @@ h4 {
     border-radius: 20px;
 }
 
-#restart {
+#reStart {
     width: 150px;
     margin: 0 auto;
     border-radius: 20px;
     padding: 10px;
     color: red;
+    font: 400 25px/0.8 "Berkshire Swash", Helvetica, sans-serif;
 }
 
 #choiceButton {
